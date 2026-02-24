@@ -1,0 +1,43 @@
+    :root {
+         --primary: #4F46E5;
+    }
+    .form-group { margin-bottom: 20px; }
+    .row { display: flex; gap: 20px; }
+    .col { flex: 1; }
+    label { display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px; 
+        }
+    input, 
+    select, 
+    textarea { 
+        width: 100%; 
+        padding: 12px 15px; 
+        border: 1px solid #d1d5db; 
+        border-radius: 8px; 
+        font-size: 15px; 
+        background: #f9fafb; 
+        transition: 0.3s; 
+        box-sizing: border-box; 
+    }
+    input:focus,
+    select:focus, 
+    textarea:focus { 
+        outline: none; 
+        border-color: var(--primary); 
+        background: #fff; box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1); 
+    }
+    .submit-btn { 
+        width: 100%; 
+        padding: 16px; 
+        background: var(--primary); 
+        color: white; 
+        border: none; 
+        border-radius: 10px; 
+        font-size: 16px; 
+        font-weight: 600; 
+        cursor: pointer; 
+        transition: 0.3s; 
+        margin-top: 20px; 
+    }
