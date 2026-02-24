@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmailJS Contact Form - Database without Database</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="form-container">
+        <h2 style="margin-top:0; color: #111827;">Send us a Message</h2>
+        <form id="contact-form">
+            <div class="row">
+                <div class="col form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="user_name" placeholder="Enter your name" required>
+                </div>
+                <div class="col form-group">
+                    <label>Email Address</label>
+                    <input type="email" name="user_email" placeholder="Enter email" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Subject</label>
+                <select name="subject">
+                    <option value="Graphic Design">Graphic Design</option>
+                    <option value="Digital Marketing">Digital Marketing</option>
+                    <option value="Web Development">Web Development</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn" id="button">Send Email</button>
+        </form>
+    </div>
+    <script src="js/db-config.js"></script>
+
+</body>
+</html>
