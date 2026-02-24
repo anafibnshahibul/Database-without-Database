@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Database without Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!--Submit information will be saved on Google form-->
+    <h1>Contact Form</h1>
+    <!--Simple contact form for example-->
+    <!--In the action attribute, enter your Google Form ID, which you will find in the Google Form URL.-->
+        <form id="checkoutForm" action="https://docs.google.com/forms/u/0/d/e/YOUR_FORM_ID/formResponse" method="POST" target="hidden_iframe">
+            <!--You need to give your google form entry IDs in the name attributes.-->
+            <div class="row">
+                <div class="col form-group">
+                    <label>Name</label>
+                    <input type="text" name="entry.YOUR_ENTRY_ID" placeholder="Your Name" required>
+                </div>
+
+            <!--You need to give your google form entry IDs in the name attributes.-->
+
+            <div class="col form-group">
+                    <label>Subject</label>
+                    <input type="text" name="entry.YOUR_ENTRY_ID" placeholder="..........." required>
+                </div>
+            </div>
+
+            <!--You need to give your google form entry IDs in the name attributes.-->
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" name="entry.YOUR_ENTRY_ID" placeholder="you@example.com" required>
+            </div>
+
+            <!--You need to give your google form entry IDs in the name attributes.-->
+
+            <div class="form-group">
+                <label>Massege</label>
+                <textarea name="entry.YOUR_ENTRY_ID" rows="4" placeholder=".............."></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+
+        <!--Linked the js file-->
+        <script src="js/db-config.js"></script>
+</body>
+</html>
