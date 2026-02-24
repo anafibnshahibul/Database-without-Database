@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container">
+    <h2 style="margin-top:0; color: #111827;">Order via WhatsApp</h2>
+    <form id="whatsapp-order">
+        <div class="row">
+            <div class="col form-group">
+                <label>Customer Name</label>
+                <input type="text" id="order_name" placeholder="Enter name" required>
+            </div>
+            <div class="col form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="order_phone" placeholder="017..." required>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Select Service</label>
+            <select id="order_service">
+                <option value="Logo Design - $50">Logo Design - $50</option>
+                <option value="Social Media Ad - $30">Social Media Ad - $30</option>
+                <option value="Full Branding - $150">Full Branding - $150</option>
+            </select>
+        </div>
+
+        <button type="button" onclick="sendOrderWhatsApp()" class="submit-btn" style="background: #25D366;">
+            Place Order on WhatsApp
+        </button>
+    </form>
+</div>
+
+<script src="js/db-config.js">
+</script>
+</body>
+</html>
