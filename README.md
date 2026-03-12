@@ -15,8 +15,15 @@ Everything runs on standard HTML, CSS, and JavaScript. The code is heavily comme
 - 📄 **Auto Invoice Generation:** Built-in dynamic 'Thank You' page with an option to print/save order memos.
 - 🛠️ **Magic ID Finder:** Comes with a built-in custom tool URL to automatically extract Google Form Entry IDs without digging through code.
 - 🎨 **Beginner Friendly:** Heavily commented code makes it super easy to edit and customize.
-
+- 🔒 **Login System (only for GAS):** Users can only access certain pages after successful authentication.
 ---
+
+## 🔓 Secure Auth System (Advanced Feature)
+*This project includes a built-in Authentication system that uses Google Sheets as a User Database.*
+
+- **Data Privacy:** Passwords are never stored in plain text; they are encrypted using **SHA-256 Hashing**.
+- **Session Management:** Once logged in, the system uses `localStorage` to keep the user authenticated across pages.
+- **Access Control:** Specific pages (like the User Dashboard) are protected and only accessible to logged-in users.
 
 ---
 
@@ -33,7 +40,7 @@ This project is completely plug-and-play.
 
 1. **Download:** Click the green `Code` button and select `Download ZIP`, or clone the repository.
 2. **Extract:** Unzip the folder on your computer.
-3. **Edit Configurations:** Open the `js/config.js` (or the respective script files) in any code editor (like VS Code or Notepad). Read the comments inside the code—they will tell you exactly where to paste your IDs.
+3. **Edit Configurations:** Open the `js/db-config.js` (or the respective script files) in any code editor (like VS Code or Notepad). Read the comments inside the code—they will tell you exactly where to paste your IDs.
 4. **Host:** Upload the files to your hosting provider. Done!
 
 ---
@@ -49,9 +56,39 @@ This project is completely plug-and-play.
    - Press `Ctrl+F` and search for `<form action="`.
    - Copy that URL (it usually ends with `/formResponse`). Paste it into your project's configuration file.
 4. **Find the Entry IDs:** Every input field in Google Forms has a secret ID that looks like `entry.123456789`. 
-   - **Magic Tool:** To make this incredibly easy, go to our official ID Finder Tool: `[YOUR_ID_FINDER_TOOL_URL_HERE]`
+   - **Gemini Ai:**  Inspect your form and paste these prompt on Google Gemini -<em>"Help me find the google form entry IDs from these codes. Code - {{paste your inspected source code}}"</em>
    - Just paste your Google Form's source code there, and it will automatically extract all the `entry.ID`s for you!
 5. **Connect:** Paste these `entry.ID`s into the JavaScript file as instructed in the inline comments.
+
+---
+
+## ⚙️ Google Apps Script (Advanced Database API)
+*This is the modern alternative to Google Forms. It allows for professional data handling, security, and multiple database tables (Sheets) within one script.*
+
+### 📂 Script Location:
+> **Backend Logic:** `gs/Code.gs`
+
+### Step-by-Step Configuration:
+
+1. **Prepare your Sheet:** - Create a Google Sheet.
+   - Name your tabs (e.g., `Contacts` or `Orders`).
+
+2. **Open Script Editor:** - From your Google Sheet, go to `Extensions` > `Apps Script`.
+
+3. **Copy-Paste:** - Open `gs/Code.gs` from this project.
+   - Copy the entire code and paste it into the Apps Script editor.
+
+4. **Deploy as Web App:**
+   - Click `Deploy` > `New Deployment`.
+   - Select type: `Web App`.
+   - Set **Execute as:** `Me`.
+   - Set **Who has access:** `Anyone`.
+
+5. **Authorize & Connect:**
+   - Click `Deploy` and `Review Permissions`.
+   - Copy the generated `Web App URL`.
+   - Paste it into your `js/db-config.js` file:
+   `const GAS_URL = "https://script.google.com/macros/s/YOUR_GAS_ID/exec";`
 
 ---
 

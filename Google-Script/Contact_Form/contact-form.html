@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form GAS - Database without Database</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Contact Form</h1>
+        <div id="msg-box" class="message-box" style="display:none; padding:10px; margin-bottom:15px; border-radius:5px;"></div>
+        
+        <form id="contactForm">
+            <div class="row">
+                <div class="col form-group">
+                    <label>Name</label>
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="col form-group">
+                    <label>Subject</label>
+                    <input type="text" id="subject" placeholder="..........." required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Message</label>
+                <textarea id="message" rows="4" placeholder=".............." required></textarea>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">Submit</button>
+        </form>
+    </div>
+
+    <script src="js/db-config.js"></script>
+</body>
+</html>
